@@ -2,11 +2,11 @@ import pandas as pd
 
 # File paths for 6 stocks
 file_paths = {
-    'AMZ': "/Users/yuchen/Desktop/PROJECT_441/AMZ_data.csv",
+    'AMZN': "/Users/yuchen/Desktop/PROJECT_441/AMZN_data.csv",
     'JPM': "/Users/yuchen/Desktop/PROJECT_441/JPM_data.csv",
     'MCD': "/Users/yuchen/Desktop/PROJECT_441/MCD_data.csv",
     'NFLX': "/Users/yuchen/Desktop/PROJECT_441/NFLX_data.csv",
-    'AMZN': "/Users/yuchen/Desktop/PROJECT_441/PFE_data.csv",
+    'PFE': "/Users/yuchen/Desktop/PROJECT_441/PFE_data.csv",
     'XOM': "/Users/yuchen/Desktop/PROJECT_441/XOM_data.csv"
 }
 
