@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load data
-file_path = "/Users/yuchen/Desktop/market_data.csv"
+file_path = "/Users/yuchen/Desktop/PROJECT_441/SPX_data.csv"
 df = pd.read_csv(file_path)
 
 # Step 1: Clean and prepare
@@ -18,15 +18,13 @@ def is_month_complete(group):
 complete_months = df.groupby([df.index.year, df.index.month]).filter(is_month_complete)
 
 # Step 3: Resample complete data to month-end closing prices
-monthly_prices = complete_months['Close/Last'].resample('M').last()
+monthly_prices = complete_months['Close/Last'].resample('ME').last()
 
 # Step 4: Calculate month-over-month returns
 monthly_returns = monthly_prices.pct_change()
-print(monthly_returns)
 
-# Step 5: Compute standard deviation
-monthly_std_dev = monthly_returns.std()
+# Step 5: Compute monthly variance
+monthly_var = monthly_returns.var()
 
-# Output results
-print(f"\nStandard deviation of monthly returns: {monthly_std_dev:.4%}")
-
+# Output result
+print(f"\nMonthly variance of returns: {monthly_var:.6f}")
